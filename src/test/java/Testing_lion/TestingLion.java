@@ -1,4 +1,4 @@
-package TestingLion;
+package Testing_lion;
 
 import com.example.Feline;
 import com.example.Lion;

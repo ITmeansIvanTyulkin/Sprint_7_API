@@ -1,4 +1,4 @@
-package TestingFeline;
+package Testing_feline;
 
 import com.example.Feline;
 import org.junit.Assert;
@@ -14,7 +14,7 @@ import java.util.List;
 public class TestingFeline {
 
     @Mock
-    Feline feline;
+    Feline feline = new Feline();
 
     // Проверка вида животного класса "Хищник".
     @Test
@@ -35,6 +35,7 @@ public class TestingFeline {
     @Test
     public void getFamilyTestReturningString() {
         Mockito.when(feline.getFamily()).thenReturn("Кошачьи");
+        Assert.assertEquals("Кошачьи", feline.getFamily());
         System.out.println(feline.getFamily());
     }
 
@@ -57,8 +58,9 @@ public class TestingFeline {
     // Проверка, что стаб возвращает Int.
     @Test
     public void getKittensReturningInt() {
-        Mockito.when(feline.getKittens()).thenReturn(1);
-        System.out.println(feline.getKittens());
+        int expectedNumber = feline.getKittens();
+        int actualNumber = 0;
+        Assert.assertEquals(expectedNumber, actualNumber);
     }
 
     // Проверка счётчика котят.

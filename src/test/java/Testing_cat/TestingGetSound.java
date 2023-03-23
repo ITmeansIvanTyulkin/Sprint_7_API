@@ -1,4 +1,4 @@
-package TestingCat;
+package Testing_cat;
 
 import com.example.Cat;
 import com.example.Feline;
