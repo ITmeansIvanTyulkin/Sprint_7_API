@@ -1,4 +1,4 @@
-package Testing_feline;
+package testing_feline;
 
 import com.example.Feline;
 import org.junit.Assert;
