@@ -48,8 +48,8 @@ public class TestingLion {
 
     // Проверка, что метод вызывается.
     @Test
-    public void getKittensTest() {
-        Lion lion = new Lion(feline);
+    public void getKittensTest() throws Exception {
+        Lion lion = new Lion(sex, feline);
         lion.getKittens();
         Mockito.verify(feline, Mockito.times(1)).getKittens();
     }
@@ -57,7 +57,7 @@ public class TestingLion {
     // Проверка на возврат стаба.
     @Test
     public void lionHasCorrectNumberOfKittens() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(sex, feline);
         Mockito.when(feline.getKittens()).thenReturn(1);
         Assert.assertEquals(1, lion.getKittens());
     }
@@ -65,7 +65,7 @@ public class TestingLion {
     // // Проверка, что лев - хищник.
     @Test
     public void lionFeedsLikePredator() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(sex, feline);
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.getFood("Хищник")).thenReturn(expected);
         Assert.assertEquals("Лев питается не как хищник", expected, lion.getFood());

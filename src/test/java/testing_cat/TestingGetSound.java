@@ -13,21 +13,15 @@ import org.mockito.junit.MockitoJUnitRunner;
 public class TestingGetSound {
 
     @Mock
-    Cat cat;
+    Feline feline;
 
     // Проверка, что метод вызывается.
     @Test
-    public void getSoundTest() {
-        cat.getSound();
-        Mockito.verify(cat, Mockito.times(1)).getSound();
+    public void catMustSayMeow() {
+        Cat cat = new Cat(feline);
+        Assert.assertEquals("Мяу", cat.getSound());
     }
 
-    // Проверка, что стаб возвращает String.
-    @Test
-    public void getSoundTestReturningString() {
-        Mockito.when(cat.getSound()).thenReturn("Мяу");
-        System.out.println(cat.getSound());
-    }
 
     // Проверка, что ожидаемый результат соответствует фактическому.
     @Test

@@ -5,7 +5,6 @@ public class Objects {
 
     // Чтобы заменить льва на, например, волка, достаточно вызвать new Wolf().
     public static void main(String[] args) throws Exception {
-        Feline feline = new Feline();
-        Lion lion = new Lion(feline);
+        //Feline feline = new Feline();
     }
 }
